@@ -11,7 +11,6 @@ It introduces a simple, fast and scalable LE-PDE method to accelerate the simula
 ```code
 git submodule init; git submodule update
 ```
-(If showing error of no permission, need to first [add a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).)
 
 2. Install dependencies.
 
@@ -69,18 +68,5 @@ python train.py --exp_id=le-pde-smoke --date_time=2022-11-21 --dataset=movinggas
 ```
 
 The results are saved under `results/{--exp_id}_{--date_time}/` (here `--exp_id` and `--date_time` are according to the command for training). Each experiment file has the following suffix: "*Hash_{hash}_{machine-name}.p". The hash (e.g., "Un6ae7ja"), is uniquely generated according to all the configurations of the argparse (if any argument is different, it will result in a different hash).
-
-# Inverse design
-[inverse_design.ipynb](https://github.com/snap-stanford/le_pde/blob/master/inverse_design.ipynb) is a script file for inverse design to optimize the boundary condition. exp_id and data_time need to be provided to identify folder storing a model with which you perform inverse design. They should be part of the folder's name as described above.
-
-# Analysis
-
-To analyze the results, use the following notebooks:
-* 1D: [analysis_1d.ipynb](https://github.com/snap-stanford/le_pde/blob/master/analysis_1d.ipynb)
-* 2D: [analysis_2d.ipynb](https://github.com/snap-stanford/le_pde/blob/master/analysis_2d.ipynb)
-* 3D: [analysis_3d.ipynb](https://github.com/snap-stanford/le_pde/blob/master/analysis_3d.ipynb)
-* Inverse optimization: [analysis_inverse.ipynb](https://github.com/snap-stanford/le_pde/blob/master/analysis_inverse.ipynb)
-
-Pre-trained experiment files can also be downloaded [here](https://drive.google.com/drive/folders/1eHrr5CX1HEuqpsoQ0G89SyT47Dg8GyoR?usp=share_link) (put it under result/, and also change the `dirname` in the analysis notebook accordingly).
 
 
